@@ -7,16 +7,16 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = 'Aa';
+const prefix = '/';
 client.on('ready', function() {
-client.user.setGame('You are my heart!')
+client.user.setGame('`Music Bot`')
 client.user.setStatus('idle')
     console.log(`i am ready ${client.user.username}`);
 });
 
 client.on('message', message => {
 const adminprefix = ".";
-const developers = "348966352792584195";
+const developers = "469102784789348362";
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
       
@@ -47,19 +47,19 @@ const developers = "348966352792584195";
         message.channel.send(`**Ok, Streaming..** **${argresult}!**`).then(message =>{message.delete(11000)});
     }
 
-     if (message.content.startsWith(adminprefix + 's-name')) {
+     if (message.content.startsWith(adminprefix + 'sn')) {
         client.user.setUsername(argresult).then
         message.channel.send(`**Changing my name to..** **${argresult}!** `).then(message =>{message.delete(11000)});
 
     } else
 
-     if (message.content.startsWith(adminprefix + 's-avatar')) {
+     if (message.content.startsWith(adminprefix + 'sa')) {
         client.user.setAvatar(argresult);
         message.channel.send(`**Changing my avatar to..** ${argresult}`).then(message =>{message.delete(11000)});
 
     } else
 
-    if (message.content.startsWith(adminprefix + 's-status')) {
+    if (message.content.startsWith(adminprefix + 'ss')) {
         client.user.setStatus(argresult)
         message.channel.send(`**Ok, status changed to..** **${argresult}!**`).then(message =>{message.delete(11000)});
     }
@@ -99,7 +99,7 @@ var download = function(uri, filename, callback) {
 };
 
 client.on('message', function(message) {
-    const prefix = "Aa";
+    const prefix = "@";
     const member = message.member;
     const mess = message.content.toLowerCase();
     const args = message.content.split(' ').slice(1).join(' ');
